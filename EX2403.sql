@@ -1,4 +1,5 @@
-DROP TABLE PET_OWNER;
+/*DROP TABLE PET_OWNER;*/
+
 CREATE TABLE PET_OWNER(
 OwnerID int not null IDENTITY (1,1),
 OwnerLastNamen nvarchar(max) NOT NULL,
@@ -7,7 +8,7 @@ OwnerPhone nvarchar(max) NULL,
 OwnerEmail nvarChar(max) NOT NULL,
  Primary Key (OwnerID));
  
- DROP TABLE PET;
+/*DROP TABLE PET;*/
 CREATE TABLE PET (
 PetId int not null IDENTITY (1,1) Primary Key,
  PetName nvarchar(max) NOT NULL,
@@ -18,7 +19,7 @@ PetWeight DECIMAL Not NUll, OwnerID int NOT NULL,
  CONSTRAINT OwnerID_FK Foreign Key (OwnerID) References PET_OWNER(OwnerID) ON DELETE NO ACTION);
 
 
- DROP TABLE INVOICE;
+/* DROP TABLE INVOICE;*/
  CREATE TABLE INVOICE 
  (InvoiceNumber int not null IDENTITY (1,1),
   InvoiceDate Datetime2 not null,
@@ -27,16 +28,16 @@ PetWeight DECIMAL Not NUll, OwnerID int NOT NULL,
 	 Total float not null,
 	  Primary key (InvoiceNumber));
 
-DROP TABLE PRODUCT;  	 
+/*DROP TABLE PRODUCT;  */	 
 Create TABLE PRODUCT (
 ProductNumber Int not null IDENTITY (1,1),
 ProductType nvarchar(max) not null,
 ProductDescription nvarchar (max)not null,
-UnitPrice decimal not null,
+UnitPrice float not null,
 Primary key ( ProductNumber)
 );
 
-DROP TABLE LINE_ITEM;
+/*DROP TABLE LINE_ITEM;*/
 Create TABLE LINE_ITEM (
 InvoiceNumber int not null,
 LineNumber int not null IDENTITY (1,1),
