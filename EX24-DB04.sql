@@ -37,6 +37,8 @@ SELECT AVG(PetWeight) AS "AVGWeight", PetBreed FROM PET GROUP BY PetBreed HAVING
 SELECT AVG(PetWeight) AS "AVGWeight", PetBreed FROM PET WHERE PetBreed <> 'Unknown' GROUP BY PetBreed HAVING COUNT(*) >1; /* 3.34*/
 /*ØVELSE 6 DB05*/
 SELECT OwnerLastName, OwnerFirstName, OwnerEmail FROM PET_OWNER WHERE OwnerID IN(SELECT OwnerID FROM PET WHERE PetType='Cat'); /* 3.35*/
+SELECT OwnerLastName, OwnerFirstName, OwnerEmail FROM PET_OWNER WHERE OwnerID IN(SELECT OwnerID FROM PET WHERE PetType='Cat' AND PetName ='Teddy'); /* 3.36*/
+
 
 
 
